@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131d">
+  <meta name="description" content="HùngOS — a pocket computer project built around the ESP32-S3.">
+  <title>HùngOS — Pocket Computer</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0c0f17;--panel:#151a27;--line:#293247;--text:#f3f5fb;--muted:#a8b0c2;--accent:#9b8cff;--cyan:#70d9e8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#25234a 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+    a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.04em}.nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:90px 0 76px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-.055em;margin:16px 0}.hero p{color:var(--muted);max-width:570px;font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;text-decoration:none;padding:12px 18px;border-radius:12px;background:var(--accent);color:#11101d;font-weight:750}.btn.secondary{background:var(--panel);color:var(--text);border:1px solid var(--line)}
+    .device-wrap{display:grid;place-items:center;min-height:320px}.device{width:205px;height:330px;border:7px solid #41465a;border-radius:30px;background:linear-gradient(145deg,#252b40,#111521);padding:18px 12px;box-shadow:0 30px 80px #0009;transform:rotate(5deg)}.speaker{width:48px;height:5px;border-radius:8px;background:#626a7e;margin:0 auto 18px}.screen{height:258px;border-radius:15px;background:linear-gradient(150deg,#292b54,#172d40);padding:14px;display:flex;flex-direction:column;justify-content:space-between}.screen small{color:#d7dcf7}.appgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.app{height:39px;border-radius:10px;background:#ffffff22;border:1px solid #ffffff20}
+    section{padding:54px 0;border-top:1px solid var(--line)}h2{font-size:30px;letter-spacing:-.03em;margin:0 0 10px} .lead{color:var(--muted);margin:0 0 26px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:22px;border:1px solid var(--line);border-radius:17px;background:#151a27cc}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted);font-size:14px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:18px;border-left:2px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0}.step b{display:block;margin-bottom:5px}.step span{color:var(--muted);font-size:14px}footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0}.device-wrap{min-height:300px}.cards,.steps{grid-template-columns:1fr}.nav a{margin-left:10px}.nav .links{display:flex;gap:8px}.nav a{font-size:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav"><div class="brand">HùngOS<span style="color:var(--cyan)">.</span></div><div class="links"><a href="#features">Features</a><a href="#setup">Setup</a><a href="https://github.com/NaN-c-pixel/Phone">Source</a></div></nav>
+    <main>
+      <header class="hero">
+        <div><div class="eyebrow">ESP32-S3 · Pocket computing</div><h1>A tiny board.<br>A big idea.</h1><p>HùngOS is an experimental pocket-computer interface built around the ESP32-S3. It brings useful tools, playful apps, and a browser-based control panel to a small device.</p><div class="actions"><a class="btn" href="https://github.com/NaN-c-pixel/Phone">Explore the source ↗</a><a class="btn secondary" href="#features">See what it does</a></div></div>
+        <div class="device-wrap" aria-label="Illustration of a pocket computer"><div class="device"><div class="speaker"></div><div class="screen"><small>HùngOS · Home</small><div class="appgrid"><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i></div><small>Connected · Local network</small></div></div></div>
+      </header>
+      <section id="features"><h2>Made to explore</h2><p class="lead">A collection of experiments and everyday utilities in one small project.</p><div class="cards">
+        <article class="card"><h3>🗒️ Everyday tools</h3><p>Notes, tasks, timer, calculator, calendar, file tools, and more.</p></article>
+        <article class="card"><h3>📡 Device tools</h3><p>Wi-Fi status, Bluetooth scanning, GPIO controls, and system monitoring.</p></article>
+        <article class="card"><h3>🎮 Play & learn</h3><p>Small games and educational experiments designed for the pocket-computer idea.</p></article>
+      </div></section>
+      <section id="setup"><h2>Run it on your own board</h2><p class="lead">The project is designed for an ESP32-S3 running MicroPython.</p><div class="steps">
+        <div class="step"><b>01 · Prepare</b><span>Set up MicroPython and connect your ESP32-S3 to your computer.</span></div>
+        <div class="step"><b>02 · Copy</b><span>Follow the setup instructions in the source repository to copy the project files and configure Wi-Fi.</span></div>
+        <div class="step"><b>03 · Connect</b><span>Join the same local Wi-Fi network and open the device address shown by the board.</span></div>
+      </div></section>
+      <section><h2>Built as an experiment</h2><p class="lead">HùngOS is a personal hardware and software project. Features may change as the project develops.</p><a class="btn secondary" href="https://github.com/NaN-c-pixel/Phone">View project repository ↗</a></section>
+    </main>
+    <footer>© HùngOS · An independent ESP32-S3 project. This public page does not connect to or expose your device. The device interface is intended for use on your local network.</footer>
+  </div>
+</body>
+</html>
