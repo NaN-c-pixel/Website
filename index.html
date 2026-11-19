@@ -14,6 +14,27 @@
     .device-wrap{display:grid;place-items:center;min-height:320px}.device{width:205px;height:330px;border:7px solid #41465a;border-radius:30px;background:linear-gradient(145deg,#252b40,#111521);padding:18px 12px;box-shadow:0 30px 80px #0009;transform:rotate(5deg)}.speaker{width:48px;height:5px;border-radius:8px;background:#626a7e;margin:0 auto 18px}.screen{height:258px;border-radius:15px;background:linear-gradient(150deg,#292b54,#172d40);padding:14px;display:flex;flex-direction:column;justify-content:space-between}.screen small{color:#d7dcf7}.appgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.app{height:39px;border-radius:10px;background:#ffffff22;border:1px solid #ffffff20}
     section{padding:54px 0;border-top:1px solid var(--line)}h2{font-size:30px;letter-spacing:-.03em;margin:0 0 10px} .lead{color:var(--muted);margin:0 0 26px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:22px;border:1px solid var(--line);border-radius:17px;background:#151a27cc}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted);font-size:14px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:18px;border-left:2px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0}.step b{display:block;margin-bottom:5px}.step span{color:var(--muted);font-size:14px}footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
     @media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0}.device-wrap{min-height:300px}.cards,.steps{grid-template-columns:1fr}.nav a{margin-left:10px}.nav .links{display:flex;gap:8px}.nav a{font-size:12px}.figlet-logo{font-size:4px}.brand{flex:0 0 max-content;width:max-content;min-width:max-content}.nav .links{flex-wrap:wrap}}
+
+    .device{transition:transform .35s ease,box-shadow .35s ease}.device:hover{transform:rotate(0) translateY(-5px);box-shadow:0 36px 90px #000b}
+    .screen{position:relative;overflow:hidden;justify-content:flex-start;gap:10px;padding:10px;background:linear-gradient(155deg,#292b54,#172d40 72%);color:#fff}
+    .phone-status{display:flex;justify-content:space-between;font-size:8px;font-weight:700;color:#e6e9ff;padding:0 2px}
+    .phone-greeting{display:flex;flex-direction:column;gap:0;margin:3px 0 8px}.phone-greeting small{font-size:7px;color:#c6c9e7;letter-spacing:.08em}.phone-greeting strong{font-size:17px;line-height:1.3;letter-spacing:-.04em}
+    .appgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 7px}
+    .app{height:54px;min-width:0;border:0;border-radius:12px;background:#ffffff18;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;transition:transform .15s,background .15s;padding:3px}
+    .app:hover,.app:focus-visible{background:#ffffff35;transform:translateY(-2px);outline:1px solid #b7aaff}
+    .app span{font-size:19px;line-height:1.2}.app small{font-size:7px;color:#f0efff}
+    .phone-dock{display:flex;justify-content:space-around;align-items:center;margin-top:auto;padding:7px 10px;border-radius:13px;background:#ffffff20;color:#fff;font-size:13px}
+    .phone-app-view{min-height:0;flex:1;display:flex;flex-direction:column;gap:8px}.phone-app-view[hidden]{display:none}
+    .phone-appbar{display:flex;align-items:center;gap:8px;font-size:11px}.phone-appbar strong{flex:1}.phone-appbar button{border:0;background:#ffffff22;color:white;border-radius:8px;font-size:21px;width:26px;height:26px;cursor:pointer}
+    .phone-app-content{font-size:9px;overflow:auto;min-height:0;flex:1;color:#f5f5ff}.phone-app-content p{margin:5px 0;color:#d3d7f2}
+    .phone-note{width:100%;height:125px;resize:none;border:1px solid #ffffff35;border-radius:8px;background:#10182b99;color:white;padding:8px;font:9px/1.5 system-ui}
+    .phone-list{display:grid;gap:7px}.phone-list div,.phone-panel{padding:8px;border-radius:8px;background:#ffffff16}
+    .phone-calc-display{padding:10px;text-align:right;background:#10182b99;border-radius:8px;font-size:17px;min-height:38px}
+    .phone-calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:7px}.phone-calc-keys button,.phone-action{border:0;border-radius:7px;padding:7px 2px;background:#ffffff24;color:white;cursor:pointer;font-size:10px}.phone-action{padding:7px 10px;margin-top:6px}
+    .phone-toggle{display:flex;justify-content:space-between;align-items:center;padding:9px;background:#ffffff16;border-radius:8px;margin:6px 0}
+    .phone-game-score{font-size:28px;font-weight:800;text-align:center;margin:15px}
+    @media(max-width:760px){.device{transform:rotate(3deg)}.device:hover{transform:rotate(0) translateY(-3px)}}
+
   </style>
 </head>
 <body>
@@ -29,7 +50,25 @@
     <main>
       <header class="hero">
         <div><div class="eyebrow">ESP32-S3 · Pocket computing</div><h1>A tiny board.<br>A big idea.</h1><p>HùngOS is an experimental pocket-computer interface built around the ESP32-S3. It brings useful tools, playful apps, and a browser-based control panel to a small device.</p><div class="actions"><a class="btn" href="https://github.com/NaN-c-pixel/Phone">Explore around ↗</a><a class="btn secondary" href="#device-preview">Preview HùngOS ↗</a></div></div>
-        <div class="device-wrap" id="device-preview" aria-label="Illustration of a pocket computer"><div class="device"><div class="speaker"></div><div class="screen"><small>HùngOS · Home</small><div class="appgrid"><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i><i class="app"></i></div><small>Connected · Local network</small></div></div></div>
+        <div class="device-wrap" id="device-preview" aria-label="Illustration of a pocket computer"><div class="device"><div class="speaker"></div><div class="screen" id="phone-screen">
+  <div class="phone-status"><span>9:41</span><span>● Wi-Fi&nbsp; ▰</span></div>
+  <div class="phone-home" id="phone-home">
+    <div class="phone-greeting"><small>WEDNESDAY, NOV 19</small><strong>Good evening.</strong></div>
+    <div class="appgrid">
+      <button class="app app-notes" data-app="notes" aria-label="Open Notes"><span>📝</span><small>Notes</small></button>
+      <button class="app app-files" data-app="files" aria-label="Open Files"><span>📁</span><small>Files</small></button>
+      <button class="app app-wifi" data-app="wifi" aria-label="Open Wi-Fi"><span>📶</span><small>Wi-Fi</small></button>
+      <button class="app app-calc" data-app="calc" aria-label="Open Calculator"><span>🧮</span><small>Calc</small></button>
+      <button class="app app-games" data-app="games" aria-label="Open Games"><span>🎮</span><small>Games</small></button>
+      <button class="app app-settings" data-app="settings" aria-label="Open Settings"><span>⚙️</span><small>Settings</small></button>
+    </div>
+    <div class="phone-dock"><span>H</span><span>●</span><span>◉</span></div>
+  </div>
+  <div class="phone-app-view" id="phone-app-view" hidden>
+    <div class="phone-appbar"><button id="phone-back" aria-label="Back to home">‹</button><strong id="phone-app-title">App</strong><span>⋯</span></div>
+    <div class="phone-app-content" id="phone-app-content"></div>
+  </div>
+</div></div></div>
       </header>
       <section id="features"><h2>Made to explore</h2><p class="lead">A collection of experiments and everyday utilities in one small project.</p><div class="cards">
         <article class="card"><h3>🗒️ Everyday tools</h3><p>Notes, tasks, timer, calculator, calendar, file tools, and more.</p></article>
@@ -41,6 +80,62 @@
         <div class="step"><b>02 · Copy</b><span>Follow the setup instructions in the source repository to copy the project files and configure Wi-Fi.</span></div>
         <div class="step"><b>03 · Connect</b><span>Join the same local Wi-Fi network and open the device address shown by the board.</span></div>
       </div></section>
-      <section><h2>Built as an experiment</h2><p class="lead">HùngOS is a personal hardware and software project. Features may change as the project develops.</p><a class="btn secondar
+      <section><h2>Built as an experiment</h2><p class="lead">HùngOS is a personal hardware and software project. Features may change as the project develops.</p><a class="btn secondary" href="https://github.com/NaN-c-pixel/Phone">View the source ↗</a></section>
+    </main>
+    <footer>© HùngOS · A tiny board, a big idea.</footer>
+  </div>
+  <script>
+    (() => {
+      const home = document.getElementById('phone-home');
+      const view = document.getElementById('phone-app-view');
+      const title = document.getElementById('phone-app-title');
+      const content = document.getElementById('phone-app-content');
+      const back = document.getElementById('phone-back');
+      const apps = {
+        notes: ['Notes', '<p>A tiny place for ideas.</p><textarea class="phone-note" aria-label="Write a note" placeholder="Type something..."></textarea><p>Your note stays in this demo screen.</p>'],
+        files: ['Files', '<div class="phone-list"><div>📁&nbsp; Documents</div><div>📁&nbsp; Projects</div><div>🖼️&nbsp; Pictures</div><div>📄&nbsp; readme.txt</div></div>'],
+        wifi: ['Wi-Fi', '<div class="phone-panel">🟢&nbsp; Connected</div><p>Network: HUNGOS-DEMO</p><p>Signal: Excellent</p><p>IP address: 192.168.1.7</p>'],
+        calc: ['Calculator', '<div class="phone-calc-display" id="calc-display">0</div><div class="phone-calc-keys">' + ['7','8','9','÷','4','5','6','×','1','2','3','−','C','0','=','+'].map(k => '<button type="button" data-key="' + k + '">' + k + '</button>').join('') + '</div>'],
+        games: ['Mini game', '<p>Tap the button and see how high you can score.</p><div class="phone-game-score" id="game-score">0</div><button class="phone-action" id="game-tap" type="button">✨ Tap me</button>'],
+        settings: ['Settings', '<div class="phone-list"><div>🎨&nbsp; Theme <strong style="float:right">Midnight</strong></div><div>📱&nbsp; Device <strong style="float:right">HùngOS</strong></div><div>ℹ️&nbsp; Version <strong style="float:right">Web preview</strong></div></div>']
+      };
+      function openApp(name) {
+        const app = apps[name]; if (!app) return;
+        title.textContent = app[0]; content.innerHTML = app[1];
+        home.hidden = true; view.hidden = false;
+        if (name === 'calc') setupCalc();
+        if (name === 'games') setupGame();
+      }
+      function goHome() { view.hidden = true; home.hidden = false; content.innerHTML = ''; }
+      home.addEventListener('click', e => {
+        const button = e.target.closest('[data-app]');
+        if (button) openApp(button.dataset.app);
+      });
+      back.addEventListener('click', goHome);
+      function setupCalc() {
+        let expr = ''; const display = document.getElementById('calc-display');
+        content.querySelectorAll('[data-key]').forEach(button => button.addEventListener('click', () => {
+          const key = button.dataset.key;
+          if (key === 'C') expr = '';
+          else if (key === '=') {
+            try {
+              const safe = expr.replace(/×/g,'*').replace(/÷/g,'/');
+              if (!/^[0-9+*/.() -]+$/.test(safe) || !safe.trim()) throw Error();
+              expr = String(Function('"use strict";return (' + safe + ')')());
+              if (expr === 'Infinity' || expr === 'NaN') throw Error();
+            } catch { expr = 'Error'; }
+          } else if (expr === 'Error') expr = key;
+          else expr += key === '×' ? '*' : key === '÷' ? '/' : key === '−' ? '-' : key;
+          display.textContent = expr || '0';
+        }));
+      }
+      function setupGame() {
+        let score = 0;
+        document.getElementById('game-tap').addEventListener('click', () => {
+          document.getElementById('game-score').textContent = ++score;
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
