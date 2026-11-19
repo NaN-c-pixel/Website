@@ -18,11 +18,14 @@
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav"><div class="brand"><pre class="figlet-logo" id="figlet-logo" aria-label="HùngOS"> _   _ _   _ _   _  ____   ___  ____
-| | | | | | | \ | |/ ___| / _ \\ / ___|
-| |_| | | | |  \| | |  _ | | | | |  _
-|  _  | |_| | |\  | |_| || |_| | |_| |
-|_| |_|\___/|_| \_|\____(_)___/ \____/</pre><span class="figlet-cursor" aria-hidden="true">▌</span></div><div class="links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="blogs.html">Blogs</a><a href="https://github.com/NaN-c-pixel">Github</a></div></nav>
+    <nav class="nav"><div class="brand"><pre class="figlet-logo" id="figlet-logo" aria-label="HùngOS"> ██      ██  ██     ██  ████     ██    ████████     ███████     ████████
+░██     ░██ ░██    ░██ ░██░██   ░██   ██░░░░░░██   ██░░░░░██   ██░░░░░░
+░██     ░██ ░██    ░██ ░██░░██  ░██  ██      ░░   ██     ░░██ ░██
+░██████████ ░██    ░██ ░██ ░░██ ░██ ░██          ░██      ░██ ░█████████
+░██░░░░░░██ ░██    ░██ ░██  ░░██░██ ░██    █████ ░██      ░██ ░░░░░░░░██
+░██     ░██ ░██    ░██ ░██   ░░████ ░░██  ░░░░██ ░░██     ██         ░██
+░██     ░██ ░░███████  ░██    ░░███  ░░████████   ░░███████    ████████
+░░      ░░   ░░░░░░░   ░░      ░░░    ░░░░░░░░     ░░░░░░░    ░░░░░░░░</pre><span class="figlet-cursor" aria-hidden="true">▌</span></div><div class="links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="blogs.html">Blogs</a><a href="https://github.com/NaN-c-pixel">Github</a></div></nav>
     <main>
       <header class="hero">
         <div><div class="eyebrow">ESP32-S3 · Pocket computing</div><h1>A tiny board.<br>A big idea.</h1><p>HùngOS is an experimental pocket-computer interface built around the ESP32-S3. It brings useful tools, playful apps, and a browser-based control panel to a small device.</p><div class="actions"><a class="btn" href="https://github.com/NaN-c-pixel/Phone">Explore around ↗</a><a class="btn secondary" href="#device-preview">Preview HùngOS ↗</a></div></div>
@@ -38,60 +41,6 @@
         <div class="step"><b>02 · Copy</b><span>Follow the setup instructions in the source repository to copy the project files and configure Wi-Fi.</span></div>
         <div class="step"><b>03 · Connect</b><span>Join the same local Wi-Fi network and open the device address shown by the board.</span></div>
       </div></section>
-      <section><h2>Built as an experiment</h2><p class="lead">HùngOS is a personal hardware and software project. Features may change as the project develops.</p><a class="btn secondar  <script>
-    (() => {
-      const logo = document.getElementById('figlet-logo');
-      if (!logo) return;
-      const fallback = 'HUNGOS';
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      async function buildFigletBanner() {
-        const response = await fetch('3d.flf');
-        if (!response.ok) throw new Error('Could not load the FIGlet 3D font');
-        const source = (await response.text()).replace(/\r/g, '').split('\n');
-        const header = source[0].split(/\s+/);
-        const hardblank = source[0].charAt(5);
-        const height = Number(header[1]);
-        const commentLines = Number(header[5] || 0);
-        const lines = source.slice(1 + commentLines);
-        const glyphs = {};
-        let cursor = 0;
-
-        for (let code = 32; code <= 126; code++) {
-          const rows = [];
-          for (let row = 0; row < height; row++) {
-            let line = lines[cursor++] || '';
-            line = line.replace(/@+$/, '');
-            rows.push(line.replaceAll(hardblank, ' '));
-          }
-          glyphs[String.fromCharCode(code)] = rows;
-        }
-
-        return Array.from(fallback).reduce((output, character, index) => {
-          const glyph = glyphs[character] || glyphs[' '];
-          for (let row = 0; row < height; row++) {
-            output[row] += (index ? ' ' : '') + (glyph[row] || '');
-          }
-          return output;
-        }, Array(height).fill('')).map(line => line.replace(/\s+$/, '')).join('\n');
-      }
-
-      buildFigletBanner().then(art => {
-        if (reduced) {
-          logo.textContent = art;
-          return;
-        }
-        logo.textContent = '';
-        let i = 0;
-        const type = () => {
-          logo.textContent = art.slice(0, ++i);
-          if (i < art.length) window.setTimeout(type, 2);
-        };
-        type();
-      }).catch(() => {
-        logo.textContent = fallback;
-      });
-    })();
-  </script>
+      <section><h2>Built as an experiment</h2><p class="lead">HùngOS is a personal hardware and software project. Features may change as the project develops.</p><a class="btn secondar
 </body>
 </html>
